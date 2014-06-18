@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <script src="js/main.js"></script>
- <link rel="stylesheet" type="css/style.css">
+  <meta charset="UTF-8">
+  <title>Legend-wait-for-it-dary</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
 </head>
 <body>
-<h1>OMDB Movie Page</h1>
+  <h1>OMDB Fun</h1>
+  <form id="search">
+    <input id="searchField" type="search"></input>
+  </form>
 
+  <table class="imdbRating" border="1">
+    <tr>
+      <th>Fantastic!</th>
+      <th>Very Good!</th>
+      <th>Ok!</th>
+      <th>Meh...</th>
+      <th>NOPE!</th>
+    </tr>
+    <tr>
+     <td class="fantastic"></td>
+      <td class="veryGood"></td>
+      <td class="ok"></td>
+      <td class="meh"></td>
+      <td class="nope"></td>
+    </tr>
+  </table>
+
+  <div class="master">
+    <ul class="movies"></ul>
+  </div>
+  <div class="detail">
+    <h2 class="title"></h2>
+    <h3 class="year"></h3>
+    <h4 class="rating"></h4>
+    <p class="plot"></p>
+    <div class="poster"></div>
+  </div>
+    <button id="reset">Clear Your List</button>
 </body>
 </html>
