@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Legend-wait-for-it-dary</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="js/main.js"></script>
+  <meta charset="UTF-8">
+  <title>Legend-wait-for-it-dary</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
 </head>
 <body>
-  <h1>OMDB Fun</h1>
-  <form id="search">
-    <input id="searchField" type="search"></input>
-  </form>
+  <h1 class="stroke">OMDB Rating System</h1>
+<hr width="100%">
+  <form id="search">
+    <input id="searchField" type="search" size="80"></input>
+  </form>
 
-  <table class="imdbRating" border="1">
-    <tr>
-      <th>Fantastic!</th>
-      <th>Very Good!</th>
-      <th>Ok!</th>
-      <th>Meh...</th>
-      <th>NOPE!</th>
-    </tr>
-    <tr>
-     <td class="fantastic"></td>
-      <td class="veryGood"></td>
-      <td class="ok"></td>
-      <td class="meh"></td>
-      <td class="nope"></td>
-    </tr>
-  </table>
+  <div class="imdbRating">
+    <div class="fantastic movieColumns">
+      <h3>Fantastic!</h3>
+      <ul id="fantastic"></ul>
+    </div>
+    <div class="veryGood movieColumns">
+      <h3>Very Good!</h3>
+      <ul id="veryGood"></ul>
+    </div>
+    <div class="ok movieColumns">
+      <h3>Ok!</h3>
+      <ul id="ok"></ul>
+    </div>
+    <div class="meh movieColumns">
+      <h3>Meh...</h3>
+      <ul id="meh"></ul>
+    </div>
+    <div class="nope movieColumns">
+      <h3>Nope!</h3>
+      <ul id="nope"></ul>
+    </div>
+  </div>
 
-  <div class="master">
-    <ul class="movies"></ul>
-  </div>
-  <div class="detail">
-    <h2 class="title"></h2>
-    <h3 class="year"></h3>
-    <h4 class="rating"></h4>
-    <p class="plot"></p>
-    <div class="poster"></div>
-  </div>
-    <button id="reset">Clear Your List</button>
+  <div class="button">
+    <button id="reset">Clear Your List</button>
+  </div>
 </body>
 </html>

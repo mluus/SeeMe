@@ -3,6 +3,7 @@
   $(function() {
     $('#search').on('submit', function(e) {
       var masterResponse, searchTerm;
+      e.preventDefault();
       searchTerm = $('#searchField').val();
       masterResponse = $.ajax("http://www.omdbapi.com/?s=" + searchTerm, {
         dataType: "json"
@@ -17,37 +18,28 @@
           detail = $.ajax("http://www.omdbapi.com/?i=" + imdb, {
             dataType: 'json'
           });
-          console.log("http://www.omdbapi.com/?i=" + imdb);
           _results.push(detail.done(function(movie) {
             var rating;
             rating = movie.imdbRating;
-            console.log(rating);
             rating = parseFloat(movie.imdbRating);
             if (rating <= 2) {
-              $('.nope').append(movie.Title);
+              return $('.nope').append("<li>" + movie.Title + "</li>");
             } else if (rating <= 4) {
-              $('.meh').append(movie.Title);
+              return $('.meh').append("<li>" + movie.Title + "</li>");
             } else if (rating <= 6) {
-              $('.ok').append(movie.Title);
+              return $('.ok').append("<li>" + movie.Title + "</li>");
             } else if (rating <= 8) {
-              $('.veryGood').append(movie.Title);
+              return $('.veryGood').append("<li>" + movie.Title + "</li>");
             } else {
-              $('.fantastic').append(movie.Title);
+              return $('.fantastic').append("<li>" + movie.Title + "</li>");
             }
-            $('.detail .title').html(movie.Title);
-            $('.detail .poster').html(poster);
-            $('.detail .year').html(movie.Year);
-            $('.detail .plot').html(movie.Plot);
-            $('.detail .rating').html(movie.imdbRating);
-            return console.log(movie.imdbRating);
           }));
         }
         return _results;
       });
     });
     return $('#reset').click(function() {
-      $('.movies').html("");
-      return $('.fantastic').html("");
+      return $('.movieColumns li').html("");
     });
   });
 
